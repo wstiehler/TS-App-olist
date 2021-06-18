@@ -4,19 +4,19 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">nome</th>
-                <th scope="col">type_car</th>
-                <th scope="col">plaque</th>
-                <th scope="col">value</th>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Valor</th>
                 <th scope="col"></th>
             </tr>
         </thead>
             <tbody>
-                {%for item in boletos%}
+                {%for item in register_car%}
                 <tr>
                     <td>{{item.id}}</td>
-                    <td>{{item.nome}}</td>
+                    <td>{{item.name}}</td>
                     <td>{{item.type_car}}</td>
                     <td>{{item.plaque}}</td>
                     <td>{{item.value}}</td>
