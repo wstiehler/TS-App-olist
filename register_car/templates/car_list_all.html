@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">nome</th>
+                <th scope="col">type_car</th>
+                <th scope="col">plaque</th>
+                <th scope="col">value</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+            <tbody>
+                {%for item in boletos%}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.nome}}</td>
+                    <td>{{item.type_car}}</td>
+                    <td>{{item.plaque}}</td>
+                    <td>{{item.value}}</td>
+                    <td><a type="button" class="btn btn-warning" href="{% url 'update_car' id=item.id %}">Editar</a></td>
+                    <td><a type="button" class="btn btn-danger" href="{% url 'delete_car' id=item.id %}">Deletar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+
+{% endblock %}
