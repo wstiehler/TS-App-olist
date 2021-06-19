@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Visualização dos Carros</h1>
+    </div>
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/registercar" class="btn btn-info">Voltar</a>
+    </div>
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <strong>Nome: </strong>{{registercar.name}}<br>
+        <strong>Tipo: </strong>{{registercar.type_car}}<br>
+        <strong>Placa: </strong>{{registercar.plaque}}<br>
+        <strong>Preço: </strong>{{registercar.value}}<br>
+    </div>
+{%endblock%}

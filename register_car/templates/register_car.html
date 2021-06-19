@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Carros</h1>
+    </div>
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/registercar/new" class="btn btn-success">Cadastrar</a>
+        <a href="/" class="btn btn-success">Voltar</a>
+    </div>
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for register_car in registercars %}
+            <tr>
+                <th>{{register_car.id}}</th>
+                <td>{{register_car.name}}</td>
+                <td>{{register_car.type_car}}</td>
+                <td>{{register_car.plaque}}</td>
+                <td>{{register_car.value}}</td>
+                <td>
+                    <a href="/registercar/view/{{register_car.id}}" class="btn btn-dark">Visualizar</a>
+                    <a href="/registercar/update/{{register_car.id}}" class="btn btn-warning">Atualizar</a>
+                    <a href="/registercar/delete/{{register_car.id}}" class="btn btn-danger btnDel">Deletar</a>
+                </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+{% endblock %}
