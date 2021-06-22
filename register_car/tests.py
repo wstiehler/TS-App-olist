@@ -7,7 +7,7 @@ from register_car.forms import RegisterCarForms
 from register_car.models import RegisterCar
 
 
-class TestViewsTemplatesHtml(TestCase):
+class TestViewsUsingRoutesAndReturningTemplatesHtml(TestCase):
 
     def setUp(self) -> None:
         self.response = self.client.get(resolve_url('registercar'))
@@ -18,12 +18,12 @@ class TestViewsTemplatesHtml(TestCase):
     def test_route_returning_is_valid_template_register_car_html(self):
         self.assertTemplateUsed(self.response, 'register_car.html')
     
-    def test_route_returning_is_valid_template_register_car_form_html(self):
-        self.response_template = self.client.get(resolve_url('registercar_form'))
+    def test_route_returning_is_valid_template_register_new_car_form_html(self):
+        self.response_template = self.client.get(resolve_url('/registercar/new'))
         self.assertTemplateUsed(self.response_template, 'register_car_form.html')
 
 
-class TestViewReturningRouteTemplate(TestCase):
+class TestViewsReturningRouteTemplate(TestCase):
     def setUp(self) -> None:
         register = RegisterCar.objects.create(name='test', type_car='test',plaque='test', value=700)
         register.save()
